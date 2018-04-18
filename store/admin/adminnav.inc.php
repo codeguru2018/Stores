@@ -15,10 +15,9 @@
       echo "<form action=\"admin.php\" method=\"get\">\n";
       echo "<label><font color=\"#663300\"><br>Browse Products<br></font> </label>\n";
       echo "<select name=\"cat\">\n";
-
-      $query="SELECT catid,name from categories";
-      $result=mysql_query($query);
-      while($row=mysql_fetch_array($result,MYSQL_ASSOC))
+     
+      $result=mysqli_query($con, "SELECT catid,name from categories");
+      while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
       {
           $catid = $row['catid'];
           $name = $row['name'];
