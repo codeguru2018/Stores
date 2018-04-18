@@ -11,7 +11,7 @@ session_start();
    include("mylibrary/login.php");
    include("mylibrary/showproducts.php");
 
-   login();
+$con = login();
 ?>
 
 <body>
