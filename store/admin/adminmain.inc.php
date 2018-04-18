@@ -1,8 +1,8 @@
 <?php
    $userid = $_SESSION['store_admin'];
    $query = "SELECT name from admins WHERE userid = '$userid'";
-   $result=mysql_query($query);
-   $row=mysql_fetch_array($result, MYSQL_ASSOC);
+   $result=mysqli_query($con,$query);
+   $row=mysqli_fetch_array($result, MYSQLI_ASSOC);
    $name = $row['name'];
 
    echo "<h2>Welcome, $name</h2><br>\n";
@@ -26,9 +26,9 @@
    echo "<h2><br>Products currently on sale:</h2>\n";
 
    $query = "SELECT prodid,description,price,quantity from products where onsale = 1";
-   $result = mysql_query($query);
+   $result = mysqli_query($con,$query);
 
-   while($row=mysql_fetch_array($result, MYSQL_ASSOC))
+   while($row=mysqli_fetch_array($result, MYSQLI_ASSOC))
    {
       $prodid = $row['prodid'];
       $description = $row['description'];
